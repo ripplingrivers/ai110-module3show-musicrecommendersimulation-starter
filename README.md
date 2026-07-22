@@ -17,9 +17,22 @@ I decided to map out the connections between the user data and the song data usi
 *   **`Song` Data Points**: I'm looking at things like `genre` and `mood` (which seem to be clear categories), alongside numeric values like `energy` and `tempo_bpm` to capture the overall intensity.
 *   **`UserProfile` Targets**: These store the user's general preferences, like `favorite_genre`, `favorite_mood`, `target_energy`, and whether they might like acoustic sounds.
 
-### Scoring & Selection Mechanics
-1. **Scoring Rule**: To evaluate a single song, I think a weighted point system makes the most sense. For categorical things like genre or mood, it's a simple match or mismatch. But for numerical values like energy, I think we need a calculation that rewards a song for being *close* to the preference, rather than just being high or low. So, I'm using an absolute distance formula to see how far off the track is, and subtracting that from a maximum point value.
-2. **Ranking Rule**: Once a single song can be scored, the system needs a way to handle the whole list. I believe the ranking rule is just the broader process of running every song through that scoring formula, sorting the whole catalog from highest to lowest score, and then pulling out the top `k` results to show the user. 
+### Finalized Algorithm Recipe (Max: 6.0 Points)
+To evaluate how well a song matches, I've settled on a weighted point system that gives a slight edge to the overall kinetic energy of the music:
+*   **Genre Match (+2.0 points)**: Gives a solid baseline bonus if the song belongs to the user's preferred genre category.
+*   **Mood Match (+1.0 point)**: Adds a smaller bonus if the emotional text label aligns perfectly.
+*   **Energy Proximity (Up to 3.0 points)**: This is calculated using a distance formula: `3.0 * (1.0 - abs(User_Target - Song_Energy))`. I wanted energy to hold the most weight because I think the physical intensity of a track dictates a "vibe" much more than a genre label does.
+
+### Ranking Rule Mechanics
+Once the loop evaluates every single song in our file and assigns it a final score out of 6.0, the ranking rule takes over. It gathers all those individual scores, orders the tracks from the absolute highest score to the lowest, and then extracts the top `k` recommendations to print out for the user.
+
+### Potential Biases and System Blind Spots
+I think there are a few interesting biases built into this design that are worth keeping an eye on:
+1.  **Genre Dominance over Hidden Vibes**: Because a genre match gives a flat 2.0 points, an average lofi song might score significantly higher than an absolutely perfect, beautiful ambient song, simply because the ambient song lost out on the exact genre string match.
+2.  **The "Middle-of-the-Road" Soft Bias**: Because our energy calculation scales based on distance, songs with moderate energy levels (around 0.50) might accidentally show up as safe, mediocre recommendations for a wide variety of users, whereas extreme songs (very high or very low energy) will only ever show up if specifically looked for.
+
+
+
 
 
 ---
