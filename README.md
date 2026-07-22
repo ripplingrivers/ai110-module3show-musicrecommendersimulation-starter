@@ -72,27 +72,79 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Top recommendations:
-
-1. Sunrise City by Neon Echo
-   ↳ Final Match Score: 5.94 / 6.00
-   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+2.94)
+==================================================
+👤 PROFILE: High-Energy Pop
+   Targets: {'genre': 'pop', 'mood': 'happy', 'energy': 0.85}
+==================================================
+1. Sunrise City by Neon Echo (pop/happy)
+   ↳ Final Match Score: 5.91 / 6.00
+   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+2.91)
 --------------------------------------------------
-2. Gym Hero by Max Pulse
-   ↳ Final Match Score: 4.61 / 6.00
-   ↳ Reasons: genre match (+2.0), energy proximity match (+2.61)
+2. Gym Hero by Max Pulse (pop/intense)
+   ↳ Final Match Score: 4.76 / 6.00
+   ↳ Reasons: genre match (+2.0), energy proximity match (+2.76)
 --------------------------------------------------
-3. Neon Skyline by CyberPulse
-   ↳ Final Match Score: 3.94 / 6.00
-   ↳ Reasons: mood match (+1.0), energy proximity match (+2.94)
---------------------------------------------------
-4. Rooftop Lights by Indigo Parade
+3. Festival Fire by Glow Sticks (edm/happy)
    ↳ Final Match Score: 3.88 / 6.00
    ↳ Reasons: mood match (+1.0), energy proximity match (+2.88)
 --------------------------------------------------
-5. Festival Fire by Glow Sticks
+4. Neon Skyline by CyberPulse (synthwave/happy)
+   ↳ Final Match Score: 3.79 / 6.00
+   ↳ Reasons: mood match (+1.0), energy proximity match (+2.79)
+--------------------------------------------------
+5. Rooftop Lights by Indigo Parade (indie pop/happy)
    ↳ Final Match Score: 3.73 / 6.00
    ↳ Reasons: mood match (+1.0), energy proximity match (+2.73)
+--------------------------------------------------
+
+==================================================
+👤 PROFILE: Chill Lofi
+   Targets: {'genre': 'lofi', 'mood': 'chill', 'energy': 0.35}
+==================================================
+1. Library Rain by Paper Lanterns (lofi/chill)
+   ↳ Final Match Score: 6.00 / 6.00
+   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+3.00)
+--------------------------------------------------
+2. Midnight Coding by LoRoom (lofi/chill)
+   ↳ Final Match Score: 5.79 / 6.00
+   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+2.79)
+--------------------------------------------------
+3. Focus Flow by LoRoom (lofi/focused)
+   ↳ Final Match Score: 4.85 / 6.00
+   ↳ Reasons: genre match (+2.0), energy proximity match (+2.85)
+--------------------------------------------------
+4. Campfire Embers by Oak & Ivy (folk/chill)
+   ↳ Final Match Score: 3.85 / 6.00
+   ↳ Reasons: mood match (+1.0), energy proximity match (+2.85)
+--------------------------------------------------
+5. Spacewalk Thoughts by Orbit Bloom (ambient/chill)
+   ↳ Final Match Score: 3.79 / 6.00
+   ↳ Reasons: mood match (+1.0), energy proximity match (+2.79)
+--------------------------------------------------
+
+==================================================
+👤 PROFILE: Conflicting Edge Case (Intense/Moody Rock)
+   Targets: {'genre': 'rock', 'mood': 'moody', 'energy': 0.9}
+==================================================
+1. Storm Runner by Voltline (rock/intense)
+   ↳ Final Match Score: 4.97 / 6.00
+   ↳ Reasons: genre match (+2.0), energy proximity match (+2.97)
+--------------------------------------------------
+2. Night Drive Loop by Neon Echo (synthwave/moody)
+   ↳ Final Match Score: 3.55 / 6.00
+   ↳ Reasons: mood match (+1.0), energy proximity match (+2.55)
+--------------------------------------------------
+3. Festival Fire by Glow Sticks (edm/happy)
+   ↳ Final Match Score: 2.97 / 6.00
+   ↳ Reasons: energy proximity match (+2.97)
+--------------------------------------------------
+4. Gym Hero by Max Pulse (pop/intense)
+   ↳ Final Match Score: 2.91 / 6.00
+   ↳ Reasons: energy proximity match (+2.91)
+--------------------------------------------------
+5. Concrete Jungle by MC Cipher (hip-hop/intense)
+   ↳ Final Match Score: 2.85 / 6.00
+   ↳ Reasons: energy proximity match (+2.85)
 --------------------------------------------------
 
 
