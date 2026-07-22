@@ -33,8 +33,6 @@ I think there are a few interesting biases built into this design that are worth
 
 
 
-
-
 ---
 
 ## Getting Started
@@ -74,18 +72,29 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
+Top recommendations:
 
-```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
-```
+1. Sunrise City by Neon Echo
+   ↳ Final Match Score: 5.94 / 6.00
+   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+2.94)
+--------------------------------------------------
+2. Gym Hero by Max Pulse
+   ↳ Final Match Score: 4.61 / 6.00
+   ↳ Reasons: genre match (+2.0), energy proximity match (+2.61)
+--------------------------------------------------
+3. Neon Skyline by CyberPulse
+   ↳ Final Match Score: 3.94 / 6.00
+   ↳ Reasons: mood match (+1.0), energy proximity match (+2.94)
+--------------------------------------------------
+4. Rooftop Lights by Indigo Parade
+   ↳ Final Match Score: 3.88 / 6.00
+   ↳ Reasons: mood match (+1.0), energy proximity match (+2.88)
+--------------------------------------------------
+5. Festival Fire by Glow Sticks
+   ↳ Final Match Score: 3.73 / 6.00
+   ↳ Reasons: mood match (+1.0), energy proximity match (+2.73)
+--------------------------------------------------
 
-**Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
 
 ---
 
