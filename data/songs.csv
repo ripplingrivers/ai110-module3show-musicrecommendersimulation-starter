@@ -1,38 +1,62 @@
 id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18
-2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71
-3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10
-4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86
-5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05
-6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92
-7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89
-8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
-9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
-10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
-11,Golden Hour,Sol Horizon,reggae,relaxed,0.55,85,0.78,0.74,0.45
-12,Stormy Night Sonata,Clara Vance,classical,focused,0.22,65,0.15,0.20,0.98
-13,Concrete Jungle,MC Cipher,hip-hop,intense,0.85,94,0.62,0.83,0.12
-14,Campfire Embers,Oak & Ivy,folk,chill,0.40,82,0.68,0.55,0.81
-15,Neon Skyline,CyberPulse,synthwave,happy,0.78,115,0.72,0.76,0.15
-16,Deep Blue,SubMariner,ambient,moody,0.18,52,0.30,0.25,0.95
-17,Festival Fire,Glow Sticks,edm,happy,0.89,128,0.80,0.84,0.02
-18,Whispering Pines,Luna Birch,folk,relaxed,0.32,74,0.54,0.48,0.88
-19,Ma Meilleure Ennemie,Stromae & Pomme,pop,moody,0.52,122,0.45,0.68,0.65
-20,Boyfriend,Dove Cameron,pop,moody,0.54,90,0.48,0.55,0.25
-21,Hello,Adele,pop,sad,0.48,79,0.28,0.48,0.85
-22,Goodbye,Ramsey,pop,intense,0.58,110,0.32,0.50,0.40
-23,forwards beckon rebound,Adrianne Lenker,folk,chill,0.32,85,0.50,0.55,0.89
-24,Work Song,Hozier,folk,moody,0.42,75,0.38,0.45,0.72
-25,Est-ce que tu m'aimes?,GIMS,pop,intense,0.78,135,0.55,0.65,0.15
-26,Sweater Weather,The Neighbourhood,indie rock,relaxed,0.81,124,0.40,0.61,0.04
-27,Don't Let Me Down,The Chainsmokers,edm,happy,0.87,160,0.44,0.54,0.02
-28,lovely,Billie Eilish & Khalid,pop,sad,0.30,115,0.12,0.35,0.93
-29,Somebody that I Used to Know,Gotye & Kimbra,indie pop,moody,0.65,129,0.75,0.86,0.55
-30,Counting Stars,OneRepublic,pop,happy,0.75,122,0.48,0.66,0.06
-31,Just Like Fire,P!nk,pop,intense,0.84,82,0.51,0.56,0.01
-32,Wake Me Up,Avicii,edm,happy,0.78,124,0.64,0.53,0.03
-33,That's So True,Gracie Abrams,indie pop,moody,0.60,118,0.42,0.67,0.38
-34,Summertime Sadness,Lana Del Rey,pop,sad,0.62,112,0.24,0.56,0.05
-35,Dernière Danse,Indila,pop,intense,0.78,114,0.47,0.58,0.05
-36,Love Story,Indila,pop,moody,0.55,120,0.38,0.60,0.12
-37,Je te laisserai des mots,Patrick Watson,classical,sad,0.20,86,0.22,0.30,0.98
+1,Young and Beautiful,Lana Del Rey,pop,sad,0.41,114,0.22,0.32,0.28
+2,Don't Blame Me,Taylor Swift,pop,intense,0.53,136,0.19,0.61,0.12
+3,Reflections,The Neighbourhood,indie rock,moody,0.62,140,0.38,0.52,0.08
+4,Monster,Rihanna & Eminem,hip-hop,intense,0.85,110,0.62,0.78,0.05
+5,Stay,Rihanna & Mikky Ekko,pop,sad,0.31,112,0.12,0.62,0.95
+6,Daylight,David Kushner,indie,sad,0.43,130,0.32,0.50,0.82
+7,7 Rings,Ariana Grande,pop,intense,0.32,70,0.33,0.78,0.59
+8,One Last Time,Ariana Grande,pop,happy,0.59,125,0.47,0.63,0.09
+9,Can't Catch Me Now,Olivia Rodrigo,pop,moody,0.42,122,0.25,0.45,0.78
+10,Sometimes,Mattyeux & Princess Chelsea,indie,chill,0.51,105,0.55,0.68,0.45
+11,I Love You I'm Sorry,Gracie Abrams,indie pop,sad,0.38,92,0.30,0.51,0.88
+12,Love in the Dark,Adele,pop,sad,0.33,110,0.16,0.34,0.75
+13,Someone Like You,Adele,pop,sad,0.33,135,0.28,0.56,0.89
+14,the cure,Olivia Rodrigo,pop,happy,0.68,132,0.52,0.60,0.15
+15,Unethical,Faouzia,pop,sad,0.45,118,0.20,0.48,0.65
+16,Golden Brown,The Stranglers,rock,relaxed,0.65,94,0.78,0.52,0.42
+17,Closer,The Chainsmokers & Halsey,edm,happy,0.52,95,0.64,0.75,0.41
+18,Eastside,Benny Blanco & Halsey & Khalid,pop,happy,0.55,90,0.71,0.56,0.47
+19,Him & I,G-Eazy & Halsey,hip-hop,intense,0.73,88,0.32,0.58,0.05
+20,Runaway,Aurora,pop,chill,0.58,118,0.35,0.42,0.72
+21,Say You Won't Let Go,James Arthur,pop,relaxed,0.35,85,0.45,0.36,0.69
+22,Photograph,Ed Sheeran,pop,relaxed,0.38,108,0.20,0.61,0.61
+23,Stitches,Shawn Mendes,pop,happy,0.76,150,0.75,0.75,0.02
+24,Treat You Better,Shawn Mendes,pop,intense,0.82,83,0.81,0.44,0.11
+25,Youngblood,5 Seconds of Summer,pop,intense,0.85,120,0.61,0.60,0.02
+26,The Middle,Zedd & Maren Morris & Grey,edm,happy,0.65,107,0.43,0.75,0.01
+27,Senorita,Shawn Mendes & Camila Cabello,pop,moody,0.54,117,0.75,0.76,0.40
+28,LOSER,Neoni,pop,intense,0.75,125,0.40,0.65,0.03
+29,Wonderland,Neoni,pop,moody,0.68,118,0.35,0.58,0.12
+30,Carousel,Neoni,pop,moody,0.70,120,0.42,0.62,0.08
+31,Run,OneRepublic,pop,happy,0.78,122,0.72,0.68,0.05
+32,Weak,AJR,pop,happy,0.65,124,0.64,0.67,0.14
+33,Happier,Marshmello & Bastille,edm,happy,0.79,204,0.67,0.69,0.19
+34,Shape of You,Ed Sheeran,pop,happy,0.65,96,0.93,0.83,0.58
+35,New Rules,Dua Lipa,pop,happy,0.70,116,0.61,0.76,0.01
+36,Attention,Charlie Puth,pop,moody,0.61,93,0.80,0.78,0.11
+37,How Long,Charlie Puth,pop,moody,0.56,110,0.78,0.79,0.03
+38,Timber,Pitbull & Kesha,pop,happy,0.86,130,0.79,0.58,0.03
+39,Best Day of My Life,American Authors,indie rock,happy,0.81,100,0.54,0.67,0.06
+40,I'm a Mess,Bebe Rexha,pop,moody,0.69,97,0.45,0.63,0.01
+41,Demons,Imagine Dragons,rock,moody,0.71,90,0.43,0.51,0.19
+42,Girls Like You,Maroon 5 & Cardi B,pop,happy,0.54,125,0.45,0.85,0.57
+43,Party in the U.S.A.,Miley Cyrus,pop,happy,0.70,96,0.72,0.65,0.01
+44,Do I Wanna Know?,Arctic Monkeys,indie rock,moody,0.53,85,0.41,0.55,0.18
+45,Finesse,Bruno Mars & Cardi B,pop,happy,0.86,105,0.93,0.70,0.02
+46,Love Again,Dua Lipa,pop,happy,0.67,116,0.45,0.66,0.01
+47,Bad Habits,Ed Sheeran,pop,happy,0.89,126,0.59,0.81,0.05
+48,Ma Meilleure Ennemie,Stromae & Pomme,pop,moody,0.52,122,0.45,0.68,0.65
+49,Boyfriend,Dove Cameron,pop,moody,0.54,90,0.48,0.55,0.25
+50,Hello,Adele,pop,sad,0.48,79,0.28,0.48,0.85
+51,Goodbye,Ramsey,pop,intense,0.58,110,0.32,0.50,0.40
+52,forwards beckon rebound,Adrianne Lenker,folk,chill,0.32,85,0.50,0.55,0.89
+53,Work Song,Hozier,folk,moody,0.42,75,0.38,0.45,0.72
+54,Est-ce que tu m'aimes?,GIMS,pop,intense,0.78,135,0.55,0.65,0.15
+55,Sweater Weather,The Neighbourhood,indie rock,relaxed,0.81,124,0.40,0.61,0.04
+56,Don't Let Me Down,The Chainsmokers,edm,happy,0.87,160,0.44,0.54,0.02
+57,lovely,Billie Eilish & Khalid,pop,sad,0.30,115,0.12,0.35,0.93
+58,Somebody that I Used to Know,Gotye & Kimbra,indie pop,moody,0.65,129,0.75,0.86,0.55
+59,Just Like Fire,P!nk,pop,intense,0.84,82,0.51,0.56,0.01
+60,Wake Me Up,Avicii,edm,happy,0.78,124,0.64,0.53,0.03
+61,Je te laisserai des mots,Patrick Watson,classical,sad,0.20,86,0.22,0.30,0.98
