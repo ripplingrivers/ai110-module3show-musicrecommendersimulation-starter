@@ -152,11 +152,13 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Experiments You Tried
 
-Use this section to document the experiments you ran. For example:
+I wanted to see how sensitive this whole system was, so I ended up trying a few different experiments to see what would happen to the rankings:
 
-- What happened when you changed the weight on genre from 2.0 to 0.5
-- What happened when you added tempo or valence to the score
-- How did your system behave for different types of users
+1. **The Base Version**: At first, I just ran the normal point system. It worked mathematically, but I noticed that it immediately fell into some heavy "filter bubbles". It kept suggesting the exact same artist (`Neon Echo`) over and over in the top spots just because the first couple of songs matched perfectly. 
+
+2. **The Acoustic Booster**: Since the `acousticness` data was just sitting there unused in the CSV, I added a quick `+0.5` booster if a user says they like acoustic sounds and the song is above 0.6. This actually worked pretty well, since it finally pushed some folk and ambient tracks up into the recommendations. 
+
+3. **The Agentic Critique Loop**: To fix the repetitive artist issue, I built a secondary check where the system looks at its own playlist draft. If it sees the same artist or genre showing up too much, it applies a penalty right then and there (`-1.5` for duplicate artists, `-0.5` for genre clustering) and completely re-sorts the list. This probably made the biggest difference because it actually forced the system to offer some variety. 
 
 ---
 
@@ -180,10 +182,10 @@ Read and complete `model_card.md`:
 
 [**Model Card**](model_card.md)
 
-Write 1 to 2 paragraphs here about what you learned:
+Building this project really showed me that turning data into predictions involves a lot more human bias than people probably think. I used to think algorithms had to be objective since they were just programs, but now I believe it’s mostly just a developer making highly personal choices; like deciding a genre match is worth exactly 2.0 points while a mood match is worth 1.0. If you change those numbers even a little bit, the whole output shifts completely, which means the "vibe" is really just whatever the programmer decided it should be.
 
-- about how recommenders turn data into predictions
-- about where bias or unfairness could show up in systems like this
+I think algorithmic bias usually happens naturally when your data is small or your rules are too rigid. In a smaller catalog like this, a simple content-matching loop gets stuck in a loop of predictability super easily. Without adding that extra agentic layer to actively critique the playlist and penalize repetition, I think any automated system will just end up creating a boring echo chamber for the user.
+
 
 
 
