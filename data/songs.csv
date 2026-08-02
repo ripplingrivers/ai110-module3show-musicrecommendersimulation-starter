@@ -17,3 +17,22 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 16,Deep Blue,SubMariner,ambient,moody,0.18,52,0.30,0.25,0.95
 17,Festival Fire,Glow Sticks,edm,happy,0.89,128,0.80,0.84,0.02
 18,Whispering Pines,Luna Birch,folk,relaxed,0.32,74,0.54,0.48,0.88
+19,Ma Meilleure Ennemie,Stromae & Pomme,pop,moody,0.52,122,0.45,0.68,0.65
+20,Boyfriend,Dove Cameron,pop,moody,0.54,90,0.48,0.55,0.25
+21,Hello,Adele,pop,sad,0.48,79,0.28,0.48,0.85
+22,Goodbye,Ramsey,pop,intense,0.58,110,0.32,0.50,0.40
+23,forwards beckon rebound,Adrianne Lenker,folk,chill,0.32,85,0.50,0.55,0.89
+24,Work Song,Hozier,folk,moody,0.42,75,0.38,0.45,0.72
+25,Est-ce que tu m'aimes?,GIMS,pop,intense,0.78,135,0.55,0.65,0.15
+26,Sweater Weather,The Neighbourhood,indie rock,relaxed,0.81,124,0.40,0.61,0.04
+27,Don't Let Me Down,The Chainsmokers,edm,happy,0.87,160,0.44,0.54,0.02
+28,lovely,Billie Eilish & Khalid,pop,sad,0.30,115,0.12,0.35,0.93
+29,Somebody that I Used to Know,Gotye & Kimbra,indie pop,moody,0.65,129,0.75,0.86,0.55
+30,Counting Stars,OneRepublic,pop,happy,0.75,122,0.48,0.66,0.06
+31,Just Like Fire,P!nk,pop,intense,0.84,82,0.51,0.56,0.01
+32,Wake Me Up,Avicii,edm,happy,0.78,124,0.64,0.53,0.03
+33,That's So True,Gracie Abrams,indie pop,moody,0.60,118,0.42,0.67,0.38
+34,Summertime Sadness,Lana Del Rey,pop,sad,0.62,112,0.24,0.56,0.05
+35,Dernière Danse,Indila,pop,intense,0.78,114,0.47,0.58,0.05
+36,Love Story,Indila,pop,moody,0.55,120,0.38,0.60,0.12
+37,Je te laisserai des mots,Patrick Watson,classical,sad,0.20,86,0.22,0.30,0.98

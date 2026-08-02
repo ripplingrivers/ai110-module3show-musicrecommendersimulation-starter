@@ -55,7 +55,7 @@ Describe the dataset the model uses.
 Prompts:  
 
 - How many songs are in the catalog  
-  - Right now, there are 18 songs total in the catalog.
+  - Right now, there are 37 songs total in the catalog.
 
 - What genres or moods are represented  
   - It covers a few different areas like `pop`, `lofi`, `rock`, `ambient`, `jazz`, `synthwave`, `reggae`, `classical`, `hip-hop`, and `folk`. The moods range from `happy` and `chill` to `intense`, `relaxed`, and `focused`.
