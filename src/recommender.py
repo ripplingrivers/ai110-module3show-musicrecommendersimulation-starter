@@ -84,7 +84,6 @@ def load_songs(csv_path: str) -> List[Dict]:
     Loads songs from a CSV file.
     Required by src/main.py
     """
-    print(f"Loading songs from {csv_path}...")
     songs = []
     try:
         with open(csv_path, mode='r', encoding='utf-8') as f:
@@ -140,15 +139,40 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
 
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
     """
-    Functional implementation of the recommendation logic.
-    Required by src/main.py
+    AGENTIC LOOP IMPLEMENTATION:
+    Generates suggestions, critiques choices for filter bubble clustering,
+    and scales individual rankings dynamically using real-time array tracking.
     """
     scored_list = []
-    
     for song in songs:
         score, reasons = score_song(user_prefs, song)
-        explanation = ", ".join(reasons)
-        scored_list.append((song, score, explanation))
-        
+        scored_list.append((song, score, list(reasons)))
+    
     ranked_list = sorted(scored_list, key=lambda x: x[1], reverse=True)
-    return ranked_list[:k]
+    
+    # --- An Agent Critique Block ---
+    # First Pass: Apply penalties dynamically based on what would be selected
+    penalized_list = []
+    seen_artists = set()
+    seen_genres = set()
+    
+    for song, score, reasons in ranked_list:
+        adjusted_score = score
+        
+        # Injects dynamic evaluation penalties to break filter bubbles (basically, makes the process less mechanical)
+        if song["artist"] in seen_artists:
+            adjusted_score -= 1.5
+            reasons.append("diversity penalty: duplicate artist (-1.5)")
+        if song["genre"] in seen_genres:
+            adjusted_score -= 0.5
+            reasons.append("diversity penalty: genre clustering (-0.5)")
+            
+        penalized_list.append((song, round(adjusted_score, 2), ", ".join(reasons)))
+        
+        # Simulating the window: if this song is high enough to be considered,
+        # its properties affect downstream variety choices
+        seen_artists.add(song["artist"])
+        seen_genres.add(song["genre"])
+            
+    final_playlist = sorted(final_playlist, key=lambda x: x[1], reverse=True)
+    return final_playlist[:k]
