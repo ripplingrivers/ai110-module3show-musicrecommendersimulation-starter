@@ -39,12 +39,45 @@ class Recommender:
         self.songs = songs
 
     def recommend(self, user: UserProfile, k: int = 5) -> List[Song]:
-        # TODO: Implement recommendation logic
-        return self.songs[:k]
+            user_prefs = {
+                "genre": user.favorite_genre,
+                "mood": user.favorite_mood,
+                "energy": user.target_energy,
+                "acoustic": user.likes_acoustic
+            }
+            raw_songs = []
+            for s in self.songs:
+                raw_songs.append({
+                    "id": s.id, "title": s.title, "artist": s.artist,
+                    "genre": s.genre, "mood": s.mood, "energy": s.energy,
+                    "tempo_bpm": s.tempo_bpm, "valence": s.valence,
+                    "danceability": s.danceability, "acousticness": s.acousticness
+                })
+
+            # Run the agent recommendation loop
+            ranked_tuples = recommend_songs(user_prefs, raw_songs, k=k)
+
+            # Unpacks back to Song objects
+            output_songs = []
+            for r in ranked_tuples:
+                song_dict = r[0]
+                match = next((s for s in self.songs if s.id == song_dict["id"]), None)
+                if match:
+                    output_songs.append(match)
+            return output_songs
+
 
     def explain_recommendation(self, user: UserProfile, song: Song) -> str:
-        # TODO: Implement explanation logic
-        return "Explanation placeholder"
+        user_prefs = {
+            "genre": user.favorite_genre,
+            "mood": user.favorite_mood,
+            "energy": user.target_energy
+        }
+        song_dict = {
+            "genre": song.genre, "mood": song.mood, "energy": song.energy
+        }
+        _, reasons = score_song(user_prefs, song_dict)
+        return ", ".join(reasons)
 
 def load_songs(csv_path: str) -> List[Dict]:
     """
@@ -57,7 +90,7 @@ def load_songs(csv_path: str) -> List[Dict]:
         with open(csv_path, mode='r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                song = {
+                songs.append({
                     "id": int(row["id"]),
                     "title": row["title"],
                     "artist": row["artist"],
@@ -68,10 +101,9 @@ def load_songs(csv_path: str) -> List[Dict]:
                     "valence": float(row["valence"]),
                     "danceability": float(row["danceability"]),
                     "acousticness": float(row["acousticness"])
-                }
-                songs.append(song)
+                })
     except FileNotFoundError:
-        print(f"Warning: The file at {csv_path} was not found.")
+        print(f"Warning: File {csv_path} not found.")
     return songs
 
 
@@ -98,6 +130,11 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
     energy_points = 3.0 * (1.0 - energy_distance)
     score += energy_points
     reasons.append(f"energy proximity match (+{energy_points:.2f})")
+
+    # A Guardrail system expansion matching the final metrics
+    if "acoustic" in user_prefs and user_prefs["acoustic"] and song["acousticness"] > 0.6:
+        score += 0.5
+        reasons.append("acoustic booster (+0.5)")
 
     return round(score, 2), reasons
 
