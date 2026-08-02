@@ -27,8 +27,8 @@ def run_experiment(profile_name: str, user_prefs: dict, songs: list) -> None:
     for rank, rec in enumerate(recommendations, start=1):
         song, score, explanation = rec
         print(f"{rank}. {song['title']} by {song['artist']} ({song['genre']}/{song['mood']})")
-        print(f"   ↳ Final Match Score: {score:.2f} / 6.00")
-        print(f"   ↳ Reasons: {explanation}")
+        print(f"   ↳ Adjusted Match Score: {score:.2f} / 6.00")
+        print(f"   ↳ System Ledger Trace: {explanation}")
         print("-" * 50)
 
         if song['artist'] in artists_seen:
