@@ -146,12 +146,14 @@ def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tup
     scored_list = []
     for song in songs:
         score, reasons = score_song(user_prefs, song)
+        # Makes a copy of the reasons list so it don't accidentally mess up data
         scored_list.append((song, score, list(reasons)))
     
+    # Initial sort is based purely on song attributes
     ranked_list = sorted(scored_list, key=lambda x: x[1], reverse=True)
     
-    # --- An Agent Critique Block ---
-    # First Pass: Apply penalties dynamically based on what would be selected
+    # --- Agent Critique Loop ---
+    # Apply penalties dynamically based on what would be selected
     penalized_list = []
     seen_artists = set()
     seen_genres = set()
@@ -159,7 +161,7 @@ def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tup
     for song, score, reasons in ranked_list:
         adjusted_score = score
         
-        # Injects dynamic evaluation penalties to break filter bubbles (basically, makes the process less mechanical)
+        # Injects dynamic evaluation penalties to break the filter bubbles 
         if song["artist"] in seen_artists:
             adjusted_score -= 1.5
             reasons.append("diversity penalty: duplicate artist (-1.5)")
@@ -169,10 +171,10 @@ def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tup
             
         penalized_list.append((song, round(adjusted_score, 2), ", ".join(reasons)))
         
-        # Simulating the window: if this song is high enough to be considered,
-        # its properties affect downstream variety choices
+        # Tracks parameters to see what is entering the recommendation window
         seen_artists.add(song["artist"])
         seen_genres.add(song["genre"])
             
-    final_playlist = sorted(final_playlist, key=lambda x: x[1], reverse=True)
-    return final_playlist[:k]
+    # Sorts the penalized_list by the score (index 1) and saves it as the final_playlist variable!
+    final_playlist = sorted(penalized_list, key=lambda x: x[1], reverse=True)
+    return final_playlist[:k] 
