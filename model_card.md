@@ -167,3 +167,15 @@ Prompts:
 - How this changed the way you think about music recommendation apps  
   - I think it makes me look at commercial apps like Spotify a bit differently now. It makes me realize that when an app gets stuck playing the exact same style of music over and over, it's likely just caught in a strict content-matching loop similar to the one we built here. 
 
+---
+
+## 10. AI Collaboration Log 
+
+I worked pretty closely with an AI assistant to figure out how to transition this from a simple script into a smarter, agentic setup. 
+
+*   **One Helpful AI Suggestion**: I think the best idea the AI had was suggesting the multi-pass critique loop using Python sets (`seen_artists`). Instead of trying to do everything in one massive formula, it suggested making an initial playlist draft first, and then looping through it to check for clustering. I believe this made the code a lot cleaner and easier to understand. 
+
+*   **One Flawed AI Suggestion**: When we were trying to re-sort the playlist after applying the diversity penalties, the AI gave me a line of code that looked like `final_playlist = sorted(final_playlist, key=lambda x: x, reverse=True)`. This actually didn't work and triggered a bug because it didn't specify the exact tuple index to sort by. I had to manually fix it by changing the key to target the calculated score explicitly. 
+
+### System Limitations & Misuse Mitigation 
+I think the biggest limitation is probably just the size of the dataset and the fact that we are relying on hard-coded point values. If someone wanted to misuse a system like this at scale, they could probably manipulate the weights behind the scenes to purposely favor certain artists or genres for financial reasons, trapping users in a forced bubble. Our built-in Agent Diversity Auditor helps prevent that by capping artist clustering, but I think the system would still struggle with a brand new user or highly unusual genres that don't fit into our neat little text categories.
