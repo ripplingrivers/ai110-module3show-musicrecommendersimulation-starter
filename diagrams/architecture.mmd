@@ -1,0 +1,8 @@
+graph TD
+    A[Input UserProfile Dataclass] --> B(OOP Recommender Interface)
+    B --> C{Agent Critique Loop}
+    D[(Catalog: data/songs.csv)] --> C
+    C -->|Calculate Spatial Distance| E[Score Song Logic]
+    E --> F[Initial Ranked Draft List]
+    F -->|Apply Artist & Genre Clustering Audits| G[Dynamic Diversity Penalty Layer]
+    G --> H[Final Re-Sorted Playlist Output]
