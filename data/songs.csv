@@ -60,3 +60,29 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 59,Just Like Fire,P!nk,pop,intense,0.84,82,0.51,0.56,0.01
 60,Wake Me Up,Avicii,edm,happy,0.78,124,0.64,0.53,0.03
 61,Je te laisserai des mots,Patrick Watson,classical,sad,0.20,86,0.22,0.30,0.98
+62,Little Lion Man,Mumford & Sons,folk,intense,0.82,139,0.55,0.52,0.48
+63,Shake It Out,Florence & The Machine,indie rock,happy,0.78,120,0.48,0.54,0.03
+64,Take Me to Church,Hozier,indie rock,moody,0.66,95,0.44,0.56,0.64
+65,Rock Me,One Direction,pop,happy,0.85,132,0.76,0.61,0.01
+66,Pork Soda,Glass Animals,indie pop,moody,0.62,118,0.51,0.72,0.18
+67,Toes,Glass Animals,indie pop,chill,0.54,124,0.68,0.75,0.35
+68,He's My Man,Luvcat,indie,moody,0.58,112,0.42,0.60,0.22
+69,anything,Adrianne Lenker,folk,sad,0.28,82,0.38,0.48,0.92
+70,undressed,sombr,indie,sad,0.34,105,0.20,0.50,0.78
+71,back to friends,sombr,indie,sad,0.38,110,0.25,0.55,0.65
+72,Orange Juice,Noah Kahan,folk,sad,0.46,128,0.34,0.45,0.58
+73,Talking Body,Tove Lo,pop,intense,0.76,120,0.39,0.72,0.02
+74,Harpy Hare,Yaelokre,folk,chill,0.35,90,0.55,0.50,0.85
+75,Drifting,NF,hip-hop,intense,0.72,142,0.31,0.58,0.14
+76,You're Somebody Else,Flora Cash,indie pop,sad,0.35,110,0.24,0.54,0.82
+77,Which Witch,Florence & The Machine,indie rock,intense,0.84,144,0.28,0.45,0.08
+78,Blood Upon the Snow,Hozier & Bear McCreary,indie,moody,0.48,136,0.22,0.38,0.55
+79,ALICE,PEGGY,pop,intense,0.75,125,0.42,0.60,0.05
+80,I Found,Amber Run,indie pop,sad,0.30,118,0.15,0.32,0.88
+81,Your Best American Girl,Mitski,indie rock,moody,0.58,112,0.24,0.41,0.15
+82,Headlock,Imogen Heap,pop,chill,0.45,124,0.48,0.62,0.68
+83,I Bet on Losing Dogs,Mitski,indie rock,sad,0.32,105,0.18,0.48,0.74
+84,Fourth of July,Sufjan Stevens,indie,sad,0.22,76,0.12,0.35,0.95
+85,the fruits,Paris Paloma,indie,intense,0.68,122,0.34,0.58,0.42
+86,Army Dreamers,Kate Bush,pop,sad,0.35,78,0.62,0.51,0.81
+87,Look After You,The Fray,rock,relaxed,0.56,140,0.36,0.48,0.28

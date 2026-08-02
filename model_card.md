@@ -55,13 +55,13 @@ Describe the dataset the model uses.
 Prompts:  
 
 - How many songs are in the catalog  
-  - Right now, there are 61 songs total in the catalog.
+  - Right now, there are 87 songs total in the catalog.
 
 - What genres or moods are represented  
   - It covers a few different areas like `pop`, `lofi`, `rock`, `ambient`, `jazz`, `synthwave`, `reggae`, `classical`, `hip-hop`, and `folk`. The moods range from `happy` and `chill` to `intense`, `relaxed`, and `focused`.
 
 - Did you add or remove data  
-  - Yes, I expanded the starter dataset by adding 8 new songs with some different genres and moods to give the algorithm more variety to sort through.
+  - Yes, I expanded the starter dataset by adding many new songs with some different genres and moods to give the algorithm more variety to sort through.
 
 - Are there parts of musical taste missing in the dataset  
   - I think a lot is missing, honestly. It doesn't capture things like lyrics, instrumentation, release eras, or cultural context, which I believe play a massive role in whether someone actually enjoys a song or not.
@@ -82,7 +82,7 @@ Prompts:
   - I think giving energy a higher weight (3.0 points) than the text labels was a good choice because it successfully captures the actual physical intensity or pacing of a track, which keeps the overall "vibe" consistent.
 
 - Cases where the recommendations matched your intuition  
-  - When testing a standard pop profile, it placed "Sunrise City" right at the top, which felt entirely accurate based on the high energy and happy mood metrics.
+  - When testing a standard pop profile, it placed 'Rock Me' by One Direction right at the top, which felt entirely accurate based on the high energy and happy mood metrics. In the conflicting rock profile, Imagine Dragons won first place because it hit the moody label perfectly, but it was really interesting to see songs like Neoni, Hozier, and Gotye sneak in right behind it because the agent was actively penalizing pop clustering to balance out the list.
 
 
 ---
@@ -94,16 +94,18 @@ Where the system struggles or behaves unfairly.
 Prompts:  
 
 - Features it does not consider  
-  - It completely ignores other built-in features like `valence` (how positive the track sounds), `danceability`, and `acousticness`, even though that data is technically sitting right there in the CSV file.
+  - Originally, the model completely ignored extra variables like valence (how happy a track sounds), danceability, and acousticness. I ended up fixing part of this by adding an acoustic booster rule that looks at the acousticness data, but the system still completely ignores valence and danceability even though the numbers are sitting right there in the CSV.
 
 - Genres or moods that are underrepresented  
-  - Because the dataset is so small, genres like classical or reggae only have one or two songs, so the system can't give much variety if someone selects them.
+  - Because I built the dataset around what I listen to, it still has a lot of pop tracks, but I expanded it to include plenty of folk, rock, and indie options. However, genres like classical or hip-hop are now the underrepresented ones, only having one or two tracks total (like Patrick Watson or NF). If a user specifically selects classical, the system will run out of variety almost instantly.
 
 - Cases where the system overfits to one preference  
   - The system heavily overfits to the exact text strings for genre. If you love rock, a song labeled as "hip-hop" will lose 2.0 full points immediately, even if it has the exact intense energy and mood you are looking for.
 
 - Ways the scoring might unintentionally favor some users  
   - I suspect the scoring might accidentally create a "middle-of-the-road" bias. Songs with moderate energy levels (around 0.50) might constantly show up as safe, average recommendations for a lot of different profiles, while more extreme tracks get buried unless a user targets them perfectly.
+
+I also noticed that the system can easily get tricked by the conflict between music and lyrics. For example, it rates Ed Sheeran's 'Bad Habits' and Shawn Mendes' 'Stitches' as 'happy' pop songs just because the beat is fast and bouncy, completely ignoring the fact that the lyrics are actually pretty dark and depressing. It really shows that without a way to analyze text meaning, the AI only understands the math of the sound, not the actual human emotion of the song.
 
 
 ---

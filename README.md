@@ -72,80 +72,88 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
+Loaded total repository assets: 87 tracks.
+
 ==================================================
 👤 PROFILE: High-Energy Pop
    Targets: {'genre': 'pop', 'mood': 'happy', 'energy': 0.85}
 ==================================================
-1. Sunrise City by Neon Echo (pop/happy)
-   ↳ Final Match Score: 5.91 / 6.00
-   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+2.91)
+1. Rock Me by One Direction (pop/happy)
+   ↳ Adjusted Match Score: 6.00 / 6.00
+   ↳ System Ledger Trace: genre match (+2.0), mood match (+1.0), energy proximity match (+3.00)
 --------------------------------------------------
-2. Gym Hero by Max Pulse (pop/intense)
-   ↳ Final Match Score: 4.76 / 6.00
-   ↳ Reasons: genre match (+2.0), energy proximity match (+2.76)
+2. Timber by Pitbull & Kesha (pop/happy)
+   ↳ Adjusted Match Score: 5.47 / 6.00
+   ↳ System Ledger Trace: genre match (+2.0), mood match (+1.0), energy proximity match (+2.97), diversity penalty: genre clustering (-0.5)
 --------------------------------------------------
-3. Festival Fire by Glow Sticks (edm/happy)
-   ↳ Final Match Score: 3.88 / 6.00
-   ↳ Reasons: mood match (+1.0), energy proximity match (+2.88)
+3. Finesse by Bruno Mars & Cardi B (pop/happy)
+   ↳ Adjusted Match Score: 5.47 / 6.00
+   ↳ System Ledger Trace: genre match (+2.0), mood match (+1.0), energy proximity match (+2.97), diversity penalty: genre clustering (-0.5)
 --------------------------------------------------
-4. Neon Skyline by CyberPulse (synthwave/happy)
-   ↳ Final Match Score: 3.79 / 6.00
-   ↳ Reasons: mood match (+1.0), energy proximity match (+2.79)
+4. Bad Habits by Ed Sheeran (pop/happy)
+   ↳ Adjusted Match Score: 5.38 / 6.00
+   ↳ System Ledger Trace: genre match (+2.0), mood match (+1.0), energy proximity match (+2.88), diversity penalty: genre clustering (-0.5)
 --------------------------------------------------
-5. Rooftop Lights by Indigo Parade (indie pop/happy)
-   ↳ Final Match Score: 3.73 / 6.00
-   ↳ Reasons: mood match (+1.0), energy proximity match (+2.73)
+5. Run by OneRepublic (pop/happy)
+   ↳ Adjusted Match Score: 5.29 / 6.00
+   ↳ System Ledger Trace: genre match (+2.0), mood match (+1.0), energy proximity match (+2.79), diversity penalty: genre clustering (-0.5)
 --------------------------------------------------
 
 ==================================================
 👤 PROFILE: Chill Lofi
    Targets: {'genre': 'lofi', 'mood': 'chill', 'energy': 0.35}
 ==================================================
-1. Library Rain by Paper Lanterns (lofi/chill)
-   ↳ Final Match Score: 6.00 / 6.00
-   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+3.00)
+1. Harpy Hare by Yaelokre (folk/chill)
+   ↳ Adjusted Match Score: 4.00 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+3.00)
 --------------------------------------------------
-2. Midnight Coding by LoRoom (lofi/chill)
-   ↳ Final Match Score: 5.79 / 6.00
-   ↳ Reasons: genre match (+2.0), mood match (+1.0), energy proximity match (+2.79)
+2. Headlock by Imogen Heap (pop/chill)
+   ↳ Adjusted Match Score: 3.70 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.70)
 --------------------------------------------------
-3. Focus Flow by LoRoom (lofi/focused)
-   ↳ Final Match Score: 4.85 / 6.00
-   ↳ Reasons: genre match (+2.0), energy proximity match (+2.85)
+3. Sometimes by Mattyeux & Princess Chelsea (indie/chill)
+   ↳ Adjusted Match Score: 3.52 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.52)
 --------------------------------------------------
-4. Campfire Embers by Oak & Ivy (folk/chill)
-   ↳ Final Match Score: 3.85 / 6.00
-   ↳ Reasons: mood match (+1.0), energy proximity match (+2.85)
+4. Toes by Glass Animals (indie pop/chill)
+   ↳ Adjusted Match Score: 3.43 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.43)
 --------------------------------------------------
-5. Spacewalk Thoughts by Orbit Bloom (ambient/chill)
-   ↳ Final Match Score: 3.79 / 6.00
-   ↳ Reasons: mood match (+1.0), energy proximity match (+2.79)
+5. forwards beckon rebound by Adrianne Lenker (folk/chill)
+   ↳ Adjusted Match Score: 3.41 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.91), diversity penalty: genre clustering (-0.5)
 --------------------------------------------------
 
 ==================================================
-👤 PROFILE: Conflicting Edge Case (Intense/Moody Rock)
-   Targets: {'genre': 'rock', 'mood': 'moody', 'energy': 0.9}
+👤 PROFILE: Adversarial Rock Cluster
+   Targets: {'genre': 'synthwave', 'mood': 'moody', 'energy': 0.9}
 ==================================================
-1. Storm Runner by Voltline (rock/intense)
-   ↳ Final Match Score: 4.97 / 6.00
-   ↳ Reasons: genre match (+2.0), energy proximity match (+2.97)
+1. Demons by Imagine Dragons (rock/moody)
+   ↳ Adjusted Match Score: 3.43 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.43)
 --------------------------------------------------
-2. Night Drive Loop by Neon Echo (synthwave/moody)
-   ↳ Final Match Score: 3.55 / 6.00
-   ↳ Reasons: mood match (+1.0), energy proximity match (+2.55)
+2. Carousel by Neoni (pop/moody)
+   ↳ Adjusted Match Score: 3.40 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.40)
 --------------------------------------------------
-3. Festival Fire by Glow Sticks (edm/happy)
-   ↳ Final Match Score: 2.97 / 6.00
-   ↳ Reasons: energy proximity match (+2.97)
+3. Take Me to Church by Hozier (indie rock/moody)
+   ↳ Adjusted Match Score: 3.28 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.28)
 --------------------------------------------------
-4. Gym Hero by Max Pulse (pop/intense)
-   ↳ Final Match Score: 2.91 / 6.00
-   ↳ Reasons: energy proximity match (+2.91)
+4. Somebody that I Used to Know by Gotye & Kimbra (indie pop/moody)
+   ↳ Adjusted Match Score: 3.25 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.25)
 --------------------------------------------------
-5. Concrete Jungle by MC Cipher (hip-hop/intense)
-   ↳ Final Match Score: 2.85 / 6.00
-   ↳ Reasons: energy proximity match (+2.85)
+5. He's My Man by Luvcat (indie/moody)
+   ↳ Adjusted Match Score: 3.04 / 6.00
+   ↳ System Ledger Trace: mood match (+1.0), energy proximity match (+2.04)
 --------------------------------------------------
+
+📊 SYSTEM RELIABILITY SUMMARY MATRIX:
+Profile Name | Items Count | Diversity Failure Check
+High-Energy Pop | 5 | False
+Chill Lofi | 5 | False
+Adversarial Rock Cluster | 5 | False
 
 
 ---
