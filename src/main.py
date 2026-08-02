@@ -16,10 +16,13 @@ def run_experiment(profile_name: str, user_prefs: dict, songs: list) -> None:
     """Helper function to run and print recommendations for a specific profile."""
     recommendations = recommend_songs(user_prefs, songs, k=5)
 
-    print("\n==================================================")
+    print("\n" + "="*50)
     print(f"👤 PROFILE: {profile_name}")
     print(f"   Targets: {user_prefs}")
-    print("==================================================")
+    print("="*50)
+
+    artists_seen = set()
+    has_duplicates = False
     
     for rank, rec in enumerate(recommendations, start=1):
         song, score, explanation = rec
@@ -28,20 +31,37 @@ def run_experiment(profile_name: str, user_prefs: dict, songs: list) -> None:
         print(f"   ↳ Reasons: {explanation}")
         print("-" * 50)
 
+        if song['artist'] in artists_seen:
+            has_duplicates = True
+        artists_seen.add(song['artist'])
+
+    return {
+        "profile": profile_name,
+        "items_returned": len(recommendations),
+        "fails_diversity_guard": has_duplicates
+    }
+
+
 
 def main() -> None:
     songs = load_songs("data/songs.csv") 
-    print(f"Loaded songs: {len(songs)}")
+    print(f"Loaded total repository assets: {len(songs)} tracks.")
 
-    profile_a = {"genre": "pop", "mood": "happy", "energy": 0.85}
-    
-    profile_b = {"genre": "lofi", "mood": "chill", "energy": 0.35}
-    
-    profile_c = {"genre": "rock", "mood": "moody", "energy": 0.90}
+    profiles = [
+        ("High-Energy Pop", {"genre": "pop", "mood": "happy", "energy": 0.85}),
+        ("Chill Lofi", {"genre": "lofi", "mood": "chill", "energy": 0.35}),
+        ("Adversarial Rock Cluster", {"genre": "synthwave", "mood": "moody", "energy": 0.90})
+    ]
 
-    run_experiment("High-Energy Pop", profile_a, songs)
-    run_experiment("Chill Lofi", profile_b, songs)
-    run_experiment("Conflicting Edge Case (Intense/Moody Rock)", profile_c, songs)
+    summary_metrics = []
+    for name, prefs in profiles:
+        metrics = run_experiment(name, prefs, songs)
+        summary_metrics.append(metrics)
+        
+    print("\n📊 SYSTEM RELIABILITY SUMMARY MATRIX:")
+    print("Profile Name | Items Count | Diversity Failure Check")
+    for sm in summary_metrics:
+        print(f"{sm['profile']} | {sm['items_returned']} | {sm['fails_diversity_guard']}")
 
 
 if __name__ == "__main__":
