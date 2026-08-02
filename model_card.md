@@ -129,7 +129,13 @@ Prompts:
   - I ran a quick sensitivity experiment where I temporarily cut the genre weight in half and doubled the energy weight. It was fascinating to see how the rankings completely shifted from a strict text filter to a genuine sound-intensity matcher, which showed me how sensitive these point systems really are.
 
 
-No need for numeric metrics unless you created some.
+### Human Evaluation Audit
+
+| Test Track Input | Evaluation Criteria | Human Review Result / Notes |
+| --- | --- | --- |
+| "Bad Habits" by Ed Sheeran | Accurate mood placement | **Fail** - Marked "happy" due to fast acoustic tempo, but lyrics are actually dark. |
+| "Je te laisserai des mots" | Acoustic booster trigger | **Pass** - High raw acoustic score correctly boosted this track for quiet profiles. |
+| "Rock Me" by One Direction | High-Energy Pop sorting | **Pass** - Nailed the #1 spot flawlessly based on matching variables. |
 
 ---
 
